@@ -10,7 +10,9 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       build: {
-        outDir: 'docs',
+        // Для GitHub Pages на weego-web.github.io віддаємо білд прямо з кореня репо
+        outDir: '.',
+        emptyOutDir: false,
       },
       plugins: [react()],
       define: {
