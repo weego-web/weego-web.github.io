@@ -46,8 +46,9 @@ export const Footer: React.FC = () => {
             
             {/* Column 1: Info */}
             <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left min-w-0">
-                <a href="mailto:munister@outlook.com" className="font-sans text-[9px] md:text-[10px] uppercase tracking-tight hover:text-weego-lime transition-colors whitespace-nowrap" style={{ letterSpacing: '0.02em' }}>munister@outlook.com</a>
-                <p className="font-sans text-gray-400 text-xs">Lviv, Ukraine <br/> Remote Worldwide</p>
+                <span className="font-mono text-[9px] uppercase tracking-widest text-gray-500">Email</span>
+                <a href="mailto:munister@outlook.com" className="font-sans text-[10px] md:text-[11px] uppercase tracking-tight font-medium text-white hover:text-weego-lime hover:underline underline-offset-2 transition-colors whitespace-nowrap">munister@outlook.com</a>
+                <p className="font-sans text-gray-400 text-[10px] md:text-[11px] mt-1">Lviv, Ukraine · Remote Worldwide</p>
             </div>
 
             {/* Column 2: Socials */}
