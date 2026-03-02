@@ -10,8 +10,8 @@ export const CONTENT: Record<Language, TranslationStructure> = {
     ],
     hero: {
       h1Line1: 'WEBSITES',
-      h1Line2: '& SYSTEMS',
-      subheadlineLine1: 'END-TO-END:',
+      h1Line2: 'SYSTEMS THAT SHIP',
+      subheadlineLine1: 'END-TO-END STUDIO:',
       subheadlineLine2: 'DESIGN → ENGINEERING → DEPLOYMENT.',
       ctaPrimary: 'GET ESTIMATE',
       ctaSecondary: 'VIEW WORK'
@@ -27,22 +27,22 @@ export const CONTENT: Record<Language, TranslationStructure> = {
     },
     marquee: ["HIGH CONVERSION", "BRUTALIST DESIGN", "WEB ENGINEERING", "PERFORMANCE FIRST", "SEO OPTIMIZED", "SCALABLE SYSTEMS"],
     services: {
-      heading: 'Services',
-      subheading: '[WHAT WE DO]',
+      heading: 'Service routes',
+      subheading: '[HOW WE CAN WORK TOGETHER]',
       routes: [
         {
           id: 'turnkey',
           title: 'TURNKEY WEBSITE',
-          oneLiner: 'Turnkey website — fast, neat, with launch.',
+          oneLiner: 'A focused marketing website under your brand — fast, neat, launched.',
           bestFor: [
-            'To have a simple site and leads',
-            'When you need to launch quickly',
-            'When you want a fixed starting budget'
+            'When you need a clear online presence that converts',
+            'When you want to launch in weeks, not months',
+            'When a fixed, predictable starting budget matters'
           ],
           included: [
-            'Design + build (responsive)',
-            'Contact form + basic SEO structure',
-            'Deployment + handover'
+            'Design + build (responsive, mobile-first)',
+            'Clear structure, CTAs and basic SEO-ready markup',
+            'Deployment + handover, so your team can continue'
           ],
           priceBadge: 'Starting from €300',
           cta: 'LEARN MORE',
@@ -51,16 +51,16 @@ export const CONTENT: Record<Language, TranslationStructure> = {
         {
           id: 'platform',
           title: 'WEEGO PLATFORM (HOSTED BY US)',
-          oneLiner: 'Launch on our platform. We deploy, maintain, and evolve it.',
+          oneLiner: 'Your product or service on our managed platform — we deploy, maintain, and evolve it.',
           bestFor: [
-            'When you need more than a website',
-            'When support & updates matter',
-            'When you want to start on a ready base'
+            'When you need more than a simple website',
+            'When you want a long-term technical partner',
+            'When you prefer an existing, battle-tested base'
           ],
           included: [
-            'White-label design',
-            'Modules + integrations as needed',
-            'Hosting, deployment & support'
+            'White-label visual layer under your brand',
+            'Modules, integrations and internal tooling as needed',
+            'Hosting, deployment, monitoring & support'
           ],
           priceBadge: 'Setup from €500 + €100/month',
           cta: 'LEARN MORE',
@@ -69,16 +69,16 @@ export const CONTENT: Record<Language, TranslationStructure> = {
         {
           id: 'horeca',
           title: 'HORECA TEMPLATE SYSTEM',
-          oneLiner: 'Template-based HoReCa system — launch fast, adapt to your brand.',
+          oneLiner: 'Template-based HoReCa system — quick launch with a layout proven on real venues.',
           bestFor: [
-            'Restaurants, cafes, small chains',
-            'When you want a proven template, not from scratch',
-            'When you want ongoing support'
+            'Restaurants, cafés and small chains',
+            'Teams that want a proven base instead of building from scratch',
+            'Cases where operations, menus and updates change often'
           ],
           included: [
             'Ready HoReCa base (template)',
-            'Branding + UI adaptation',
-            'Integrations (payments/POS/CRM) optional'
+            'Branding + UI adaptation for your venue',
+            'Optional integrations (payments/POS/CRM, delivery, bookings)'
           ],
           priceBadge: 'Setup from €600 + €100/month',
           cta: 'LEARN MORE',
@@ -86,12 +86,12 @@ export const CONTENT: Record<Language, TranslationStructure> = {
         }
       ],
       customRequest: {
-        title: 'CUSTOM REQUEST',
-        oneLiner: 'Not sure what fits? Describe your project — we’ll recommend the best path.',
+        title: 'Custom request',
+        oneLiner: 'Have a weird setup, legacy system or something that does not fit into a template? Describe it — we will map the route.',
         bullets: [
-          'Websites, systems, integrations',
-          'Any industry',
-          'Fast reply'
+          'Greenfield builds and redesigns',
+          'Legacy systems, migrations, integrations',
+          'We reply with options, not pressure'
         ],
         cta: 'DESCRIBE PROJECT'
       },
@@ -444,17 +444,17 @@ export const CONTENT: Record<Language, TranslationStructure> = {
     faq: {
       heading: 'FAQ',
       items: [
-        { q: 'How long does a project take?', a: 'Typical landing pages take 2-3 weeks. Complex platforms take 2-4 months.' },
-        { q: 'What is your pricing model?', a: 'We work with fixed-price projects based on defined scope or monthly retainers for support.' },
-        { q: 'Do you provide maintenance?', a: 'Yes, we offer SLA-based support and continuous development packages.' },
-        { q: 'What do you need from me to start?', a: 'A clear goal, existing brand assets (if any), and a 30-minute discovery call.' },
-        { q: 'Do you work with startups?', a: 'Yes, we specialize in building MVPs and scaling digital products for tech startups.' },
-        { q: 'Is SEO included?', a: 'Basic technical SEO is included in every build. Advanced strategy is an add-on.' }
+        { q: 'What exactly do you do?', a: 'We design and build websites and small-to-mid systems: marketing sites, product sites, internal tools, simple platforms. From first idea to launch.' },
+        { q: 'How do projects usually start?', a: 'We read your brief, clarify constraints on a short call, suggest 1–2 ways to move forward and only then lock scope, budget and timeline.' },
+        { q: 'How long does it take?', a: 'Simple marketing websites typically take 2–3 weeks once content is ready. Systems with integrations and custom flows can take from 1–3 months.' },
+        { q: 'Do you help with content and structure?', a: 'Yes. We often help clients cut the noise, structure pages and write key interface copy so the site actually explains what you do.' },
+        { q: 'What happens after launch?', a: 'We can either hand over everything to your team or stay on as a technical/product partner for iterations, experiments and maintenance.' },
+        { q: 'Is this suitable for small teams or solo founders?', a: 'Yes. Many of our clients are lean teams that need a clear, sharp digital presence rather than a huge corporate website.' }
       ]
     },
     finalCta: {
-      heading: 'Ready to Scale?',
-      subheading: 'Get a precise estimate or book a discovery call today.',
+      heading: 'Have a project in mind?',
+      subheading: 'Choose how to start: send a brief for an estimate or book a short call.',
       ctaPrimary: 'Get Estimate',
       ctaSecondary: 'Book a Call'
     },
@@ -534,8 +534,8 @@ export const CONTENT: Record<Language, TranslationStructure> = {
     ],
     hero: {
       h1Line1: 'ВЕБСАЙТИ',
-      h1Line2: '& СИСТЕМИ',
-      subheadlineLine1: 'ПОВНИЙ ЦИКЛ:',
+      h1Line2: 'СИСТЕМИ, ЩО ПРАЦЮЮТЬ',
+      subheadlineLine1: 'СТУДІЯ ПОВНОГО ЦИКЛУ:',
       subheadlineLine2: 'ДИЗАЙН → РОЗРОБКА → ДЕПЛОЙ.',
       ctaPrimary: 'ОТРИМАТИ ОЦІНКУ',
       ctaSecondary: 'ПЕРЕГЛЯНУТИ РОБОТИ'
@@ -551,22 +551,22 @@ export const CONTENT: Record<Language, TranslationStructure> = {
     },
     marquee: ["ВИСОКА КОНВЕРСІЯ", "БРУТАЛІСТИЧНИЙ ДИЗАЙН", "WEB-ІНЖИНІРИНГ", "ШВИДКІСТЬ ПЕРЕДУСІМ", "SEO ОПТИМІЗАЦІЯ", "СКАЛЬОВАНІ СИСТЕМИ"],
     services: {
-      heading: 'Послуги',
-      subheading: '[ЩО МИ РОБИМО]',
+      heading: 'Формати співпраці',
+      subheading: '[ЯК МИ МОЖЕМО ПОМОЧИ]',
       routes: [
         {
           id: 'turnkey',
           title: 'САЙТ ПІД КЛЮЧ',
-          oneLiner: 'Сайт під ключ — швидко, охайно, із запуском.',
+          oneLiner: 'Маркетинговий сайт під ваш бренд — швидко, охайно, із запуском.',
           bestFor: [
-            'Для простого сайту та отримання лідів',
-            'Коли потрібно запуститися максимально швидко',
-            'Коли потрібен фіксований стартовий бюджет'
+            'Коли потрібна зрозуміла онлайн-присутність, що генерує звернення',
+            'Коли хочеться запуститися за тижні, а не місяці',
+            'Коли важливий фіксований, прогнозований стартовий бюджет'
           ],
           included: [
-            'Дизайн + розробка (responsive)',
-            'Форма зв’язку + базова SEO-структура',
-            'Деплой + передача проєкту'
+            'Дизайн + розробка (адаптив, mobile-first)',
+            'Чітка структура, CTA та базова SEO-розмітка',
+            'Деплой + передача, щоб ваша команда могла продовжити'
           ],
           priceBadge: 'Від €300',
           cta: 'ДІЗНАТИСЯ БІЛЬШЕ',
@@ -575,16 +575,16 @@ export const CONTENT: Record<Language, TranslationStructure> = {
         {
           id: 'platform',
           title: 'ПЛАТФОРМА WEEGO (ХОСТИНГ У НАС)',
-          oneLiner: 'Запуск на нашій платформі. Ми розгортаємо, підтримуємо та розвиваємо її.',
+          oneLiner: 'Ваш продукт або сервіс на нашій платформі — ми розгортаємо, підтримуємо та розвиваємо її разом з вами.',
           bestFor: [
-            'Коли потрібно більше, ніж просто сайт',
-            'Коли важливі підтримка та оновлення',
-            'Коли хочеться стартувати на готовій базі'
+            'Коли потрібно більше, ніж просто маркетинговий сайт',
+            'Коли важлива постійна технічна підтримка та розвиток',
+            'Коли хочеться спиратися на готову, перевірену основу'
           ],
           included: [
-            'White-label дизайн (ваш бренд)',
-            'Модулі + інтеграції за потребою',
-            'Хостинг, деплой та підтримка'
+            'White-label дизайн під ваш бренд',
+            'Модулі, інтеграції та внутрішні тулзи під задачі',
+            'Хостинг, деплой, моніторинг та техпідтримка'
           ],
           priceBadge: 'Setup від €500 + €100/міс',
           cta: 'ДІЗНАТИСЯ БІЛЬШЕ',
@@ -593,16 +593,16 @@ export const CONTENT: Record<Language, TranslationStructure> = {
         {
           id: 'horeca',
           title: 'HORECA TEMPLATE SYSTEM',
-          oneLiner: 'HoReCa система на базі шаблонів — швидкий запуск, адаптація під бренд.',
+          oneLiner: 'HoReCa система на базі шаблонів — швидкий запуск на базі, перевіреній на реальних закладах.',
           bestFor: [
             'Ресторани, кафе, невеликі мережі',
-            'Коли потрібен перевірений шаблон, а не розробка з нуля',
-            'Коли потрібна постійна підтримка'
+            'Команди, яким потрібна перевірена база, а не розробка з нуля',
+            'Кейси, де часто змінюються меню, акції, операційні процеси'
           ],
           included: [
             'Готова HoReCa база (шаблон)',
-            'Брендинг + адаптація UI',
-            'Інтеграції (платежі/POS/CRM) опціонально'
+            'Брендинг + адаптація UI під ваш заклад',
+            'Опціональні інтеграції (платежі/POS/CRM, доставка, бронювання)'
           ],
           priceBadge: 'Setup від €600 + €100/міс',
           cta: 'ДІЗНАТИСЯ БІЛЬШЕ',
@@ -611,11 +611,11 @@ export const CONTENT: Record<Language, TranslationStructure> = {
       ],
       customRequest: {
         title: 'КАСТОМНИЙ ЗАПИТ',
-        oneLiner: 'Не впевнені, що підійде? Опишіть проєкт — ми порадимо найкращий шлях.',
+        oneLiner: 'Складна архітектура, легасі, кілька систем чи незрозумілий запит? Опишіть це — ми запропонуємо маршрут.',
         bullets: [
-          'Сайти, системи, інтеграції',
-          'Будь-яка індустрія',
-          'Швидка відповідь'
+          'Нова розробка та редизайн',
+          'Легасі, міграції, інтеграції',
+          'Відповідь з варіантами, а не тиском'
         ],
         cta: 'ОПИСАТИ ПРОЄКТ'
       },
@@ -968,17 +968,17 @@ export const CONTENT: Record<Language, TranslationStructure> = {
     faq: {
       heading: 'FAQ',
       items: [
-        { q: 'Скільки часу займає проєкт?', a: 'Типові лендинги займають 2-3 тижні. Складні платформи — 2-4 місяці.' },
-        { q: 'Яка ваша модель ціноутворення?', a: 'Ми працюємо за фіксованою ціною на основі обсягу робіт або за щомісячною підтримкою.' },
-        { q: 'Чи надаєте ви підтримку?', a: 'Так, ми пропонуємо SLA-підтримку та пакети безперервного розвитку.' },
-        { q: 'Що потрібно від мене для старту?', a: 'Чітка мета, існуючі активи бренду (якщо є) та 30-хвилинний дзвінок.' },
-        { q: 'Чи працюєте ви зі стартапами?', a: 'Так, ми спеціалізуємося на створенні MVP та масштабуванні цифрових продуктів.' },
-        { q: 'Чи входить SEO у вартість?', a: 'Базове технічне SEO входить у кожну розробку. Просунута стратегія — додаткова опція.' }
+        { q: 'Чим конкретно ви займаєтесь?', a: 'Проєктуємо та збираємо вебсайти й невеликі системи: маркетингові сайти, сайти продуктів, внутрішні тулзи, прості платформи — від ідеї до запуску.' },
+        { q: 'Як зазвичай стартує проєкт?', a: 'Ви заповнюєте бриф, ми уточнюємо обмеження на короткому дзвінку, пропонуємо 1–2 сценарії руху, а вже потім фіксуємо обсяг, бюджет і терміни.' },
+        { q: 'Скільки це займає часу?', a: 'Прості маркетингові сайти займають орієнтовно 2–3 тижні після готовності контенту. Системи з інтеграціями та кастомним флоу — від 1 до 3 місяців.' },
+        { q: 'Чи допомагаєте ви з контентом і структурою?', a: 'Так. Часто ми допомагаємо “підчистити” меседжі, розкласти сторінки та написати ключовий інтерфейсний текст, щоб сайт нормально пояснював, чим ви займаєтесь.' },
+        { q: 'Що відбувається після запуску?', a: 'Можемо передати все вашій команді або залишитися технічним/продуктовим партнером для ітерацій, експериментів та підтримки.' },
+        { q: 'Це підходить маленьким командам і соло-фундерам?', a: 'Так. Багато наших клієнтів — невеликі команди, яким потрібна не “корпоративка на 50 сторінок”, а чітка, чесна й швидка присутність в онлайні.' }
       ]
     },
     finalCta: {
-      heading: 'Готові масштабуватися?',
-      subheading: 'Отримайте точну оцінку або забронюйте дзвінок вже сьогодні.',
+      heading: 'Є проєкт в голові?',
+      subheading: 'Обери, як стартувати: надіслати бриф для оцінки або забронювати короткий дзвінок.',
       ctaPrimary: 'Отримати оцінку',
       ctaSecondary: 'Забронювати дзвінок'
     },
