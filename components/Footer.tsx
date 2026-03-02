@@ -45,9 +45,9 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 border-t border-weego-gray pt-12">
             
             {/* Column 1: Info */}
-            <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
-                <a href="mailto:munister@outlook.com" className="font-display text-[10px] md:text-xs uppercase tracking-wide hover:text-weego-lime transition-colors whitespace-nowrap">munister@outlook.com</a>
-                <p className="font-sans text-gray-400">Lviv, Ukraine <br/> Remote Worldwide</p>
+            <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left min-w-0">
+                <a href="mailto:munister@outlook.com" className="font-sans text-[9px] md:text-[10px] uppercase tracking-tight hover:text-weego-lime transition-colors whitespace-nowrap" style={{ letterSpacing: '0.02em' }}>munister@outlook.com</a>
+                <p className="font-sans text-gray-400 text-xs">Lviv, Ukraine <br/> Remote Worldwide</p>
             </div>
 
             {/* Column 2: Socials */}
