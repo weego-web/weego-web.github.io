@@ -17,6 +17,8 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+__MACOSX
+weego-horeca-core (1)/
 *.suo
 *.ntvs*
 *.njsproj
