@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { Essence } from './components/Essence';
 import { Architecture } from './components/Architecture';
 import { ClassStructure } from './components/ClassStructure';
+import { Documentation } from './components/Documentation';
 import { TechStack } from './components/TechStack';
 import { CTA } from './components/CTA';
 
@@ -13,6 +14,7 @@ export default function App() {
       <Essence />
       <Architecture />
       <ClassStructure />
+      <Documentation />
       <TechStack />
       <CTA />
     </div>

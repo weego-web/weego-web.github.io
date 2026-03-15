@@ -14,8 +14,8 @@ export const TechStack = () => {
   ];
 
   const t = lang === 'uk' 
-    ? { badge: "04 // Стек", title: "Python + JavaScript" }
-    : { badge: "04 // Tech Stack", title: "Python + JavaScript" };
+    ? { badge: "05 // Стек", title: "Python + JavaScript" }
+    : { badge: "05 // Tech Stack", title: "Python + JavaScript" };
 
   return (
     <section className="py-32 relative border-t border-white/10 bg-graphite-light/50">
