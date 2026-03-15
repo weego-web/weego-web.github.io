@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Smartphone, Monitor, ChevronRight, LogIn, Wallet, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Smartphone, Monitor, ChevronRight, LogIn, Wallet, Send, CheckCircle, Loader2, User, Heart, History, AlertCircle } from 'lucide-react';
 
-type ScreenId = 'login' | 'balance' | 'transfer' | 'loading' | 'success';
+type ScreenId = 'login' | 'balance' | 'transfer' | 'loading' | 'success' | 'profile' | 'donation' | 'history' | 'error';
 
 const SCREENS: { id: ScreenId; label: string; icon: React.ElementType }[] = [
   { id: 'login', label: 'Вхід', icon: LogIn },
   { id: 'balance', label: 'Баланс', icon: Wallet },
   { id: 'transfer', label: 'Переказ', icon: Send },
+  { id: 'donation', label: 'Донат', icon: Heart },
+  { id: 'history', label: 'Історія', icon: History },
+  { id: 'profile', label: 'Профіль', icon: User },
   { id: 'loading', label: 'Завантаження', icon: Loader2 },
   { id: 'success', label: 'Успіх', icon: CheckCircle },
+  { id: 'error', label: 'Помилка', icon: AlertCircle },
 ];
 
 export const ScreenStates = () => {
@@ -18,12 +22,12 @@ export const ScreenStates = () => {
 
   useEffect(() => {
     if (!isAuto) return;
-    const seq: ScreenId[] = ['login', 'balance', 'transfer', 'loading', 'success', 'balance'];
+    const seq: ScreenId[] = ['login', 'balance', 'transfer', 'donation', 'history', 'profile', 'loading', 'success', 'error', 'balance'];
     let i = 0;
     const t = setInterval(() => {
       i = (i + 1) % seq.length;
       setActiveScreen(seq[i]);
-    }, 3200);
+    }, 2800);
     return () => clearInterval(t);
   }, [isAuto]);
 
@@ -77,6 +81,12 @@ export const ScreenStates = () => {
               <div className="absolute inset-[3px] rounded-[2.25rem] overflow-hidden bg-graphite-light">
                 <div className="absolute top-0 inset-x-0 h-10 bg-[#0a0908] flex justify-center items-end pb-2 z-20">
                   <div className="phone-notch" />
+                  <div className="absolute top-3 left-4 text-[9px] text-beige-500/50 font-mono">9:41</div>
+                  <div className="absolute top-3 right-4 flex gap-1">
+                    <span className="w-1 h-2 rounded-sm bg-beige-500/40" />
+                    <span className="w-1 h-2.5 rounded-sm bg-beige-500/50" />
+                    <span className="w-1 h-3 rounded-sm bg-beige-500/60" />
+                  </div>
                 </div>
                 <div className="relative z-10 pt-14 px-4 pb-6 h-full">
                   <AnimatePresence mode="wait">
@@ -90,8 +100,12 @@ export const ScreenStates = () => {
                         className="space-y-5"
                       >
                         <div className="text-center mb-8">
-                          <div className="text-beige-400 font-mono text-[10px] uppercase mb-1">Army Bank</div>
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-beige-500/10 border border-beige-500/20 mb-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-beige-500/60" />
+                            <span className="text-beige-400 font-mono text-[10px] uppercase">Army Bank</span>
+                          </div>
                           <div className="text-beige-200 text-sm">Увійдіть до акаунту</div>
+                          <div className="text-beige-500/50 text-[9px] mt-1">Безпечний вхід</div>
                         </div>
                         <div className="space-y-3">
                           <div className="h-11 rounded-xl bg-white/5 border border-beige-500/20 px-4 flex items-center text-beige-200/80 text-sm">+380 XX XXX XX XX</div>
@@ -111,10 +125,13 @@ export const ScreenStates = () => {
                         transition={{ duration: 0.3 }}
                         className="space-y-4"
                       >
-                        <div className="bg-beige-500/10 border border-beige-500/20 rounded-2xl p-5">
-                          <div className="text-beige-400/80 font-mono text-[10px] uppercase mb-1">Баланс</div>
-                          <div className="text-2xl font-serif text-beige-300">₴12,450</div>
-                          <div className="text-beige-500/60 text-[10px] mt-1">UA1234...3456</div>
+                        <div className="bg-beige-500/10 border border-beige-500/20 rounded-2xl p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                          <div className="flex justify-between items-start mb-2">
+                            <span className="text-beige-400/80 font-mono text-[10px] uppercase">Баланс</span>
+                            <span className="w-2 h-2 rounded-full bg-green-500/60 animate-pulse" title="Активний" />
+                          </div>
+                          <div className="text-2xl font-serif text-beige-300 tracking-tight">₴12,450</div>
+                          <div className="text-beige-500/60 text-[10px] mt-2 font-mono">UA1234 **** 3456</div>
                         </div>
                         <div className="grid grid-cols-3 gap-2">
                           {['Родині', 'Донат', 'Накоп'].map((l, i) => (
@@ -202,6 +219,121 @@ export const ScreenStates = () => {
                         </button>
                       </motion.div>
                     )}
+                    {activeScreen === 'profile' && (
+                      <motion.div
+                        key="profile"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="space-y-4"
+                      >
+                        <div className="flex items-center gap-4 p-4 rounded-2xl bg-beige-500/10 border border-beige-500/20">
+                          <div className="w-14 h-14 rounded-full bg-beige-500/20 flex items-center justify-center">
+                            <User className="w-7 h-7 text-beige-500" />
+                          </div>
+                          <div>
+                            <div className="font-mono font-medium text-beige-200">Іван Петренко</div>
+                            <div className="text-[10px] text-beige-500/70">+380 XX XXX XX XX</div>
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          {['Редагувати профіль', 'Змінити пароль', 'Налаштування'].map((l, i) => (
+                            <div key={i} className="h-10 rounded-xl bg-white/5 border border-beige-500/15 px-4 flex items-center justify-between">
+                              <span className="text-xs text-beige-300/80">{l}</span>
+                              <ChevronRight className="w-3.5 h-3.5 text-beige-500/50" />
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                    {activeScreen === 'donation' && (
+                      <motion.div
+                        key="donation"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="space-y-4"
+                      >
+                        <div className="text-beige-400 font-mono text-[10px] uppercase">Донат</div>
+                        <div className="space-y-2">
+                          <div className="p-4 rounded-xl bg-beige-500/10 border border-beige-500/20 flex items-center gap-3">
+                            <Heart className="w-5 h-5 text-beige-500" />
+                            <div>
+                              <div className="text-xs text-beige-200">Підрозділ</div>
+                              <div className="text-[10px] text-beige-500/60">Донат на підрозділ</div>
+                            </div>
+                          </div>
+                          <div className="p-4 rounded-xl bg-white/5 border border-beige-500/15 flex items-center gap-3">
+                            <Heart className="w-5 h-5 text-beige-500/60" />
+                            <div>
+                              <div className="text-xs text-beige-300/80">Волонтерський фонд</div>
+                              <div className="text-[10px] text-beige-500/50">Донат на фонд</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="h-11 rounded-xl bg-white/5 border border-beige-500/20 px-4 flex items-center justify-between">
+                          <span className="text-beige-200/80 text-sm">Сума</span>
+                          <span className="text-beige-400">₴500</span>
+                        </div>
+                        <button className="w-full h-12 rounded-xl bg-beige-500/30 border border-beige-500/40 text-beige-300 font-medium text-sm">
+                          Підтвердити донат
+                        </button>
+                      </motion.div>
+                    )}
+                    {activeScreen === 'history' && (
+                      <motion.div
+                        key="history"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="space-y-3"
+                      >
+                        <div className="text-beige-400 font-mono text-[10px] uppercase mb-2">Історія операцій</div>
+                        <div className="space-y-2">
+                          {[
+                            { t: '+₴8,000', d: 'Бойові виплати', time: 'Сьогодні 09:00' },
+                            { t: '-₴2,000', d: 'Переказ родині', time: 'Вчора 18:32' },
+                            { t: '-₴500', d: 'Донат підрозділ', time: 'Вчора 14:15' },
+                            { t: '+₴5,000', d: 'Поповнення', time: '15.03 12:00' },
+                          ].map((r, i) => (
+                            <div key={i} className="p-3 rounded-xl bg-white/5 border border-beige-500/10 flex justify-between items-center">
+                              <div>
+                                <div className={`text-xs font-medium ${r.t.startsWith('+') ? 'text-beige-400' : 'text-beige-300/80'}`}>{r.t}</div>
+                                <div className="text-[10px] text-beige-500/60">{r.d}</div>
+                              </div>
+                              <div className="text-[9px] text-beige-500/50">{r.time}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                    {activeScreen === 'error' && (
+                      <motion.div
+                        key="error"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.25 }}
+                        className="flex flex-col items-center justify-center py-16 gap-6"
+                      >
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                          className="w-16 h-16 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center"
+                        >
+                          <AlertCircle className="w-8 h-8 text-red-500" />
+                        </motion.div>
+                        <div className="text-beige-300 text-sm font-medium text-center">Помилка з'єднання</div>
+                        <div className="text-beige-500/70 text-xs text-center">Сервер тимчасово недоступний. Спробуйте пізніше.</div>
+                        <button className="px-6 py-2 rounded-lg bg-beige-500/20 border border-beige-500/30 text-beige-300 text-xs">
+                          Повторити
+                        </button>
+                      </motion.div>
+                    )}
                   </AnimatePresence>
                 </div>
               </div>
@@ -245,7 +377,7 @@ export const ScreenStates = () => {
                         <div className="h-9 w-24 rounded-lg bg-beige-500/20 border border-beige-500/30" />
                       </motion.div>
                     )}
-                    {(activeScreen === 'balance' || activeScreen === 'transfer' || activeScreen === 'loading' || activeScreen === 'success') && (
+                    {(activeScreen === 'balance' || activeScreen === 'transfer' || activeScreen === 'donation' || activeScreen === 'history' || activeScreen === 'profile' || activeScreen === 'loading' || activeScreen === 'success' || activeScreen === 'error') && (
                       <motion.div key="d-dash" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4 p-4">
                         <div className="grid grid-cols-3 gap-3">
                           {['Баланс', 'Бойові', 'Родині'].map((l, i) => (
