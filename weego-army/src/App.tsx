@@ -16,6 +16,8 @@ import { MetricsDashboard } from './components/MetricsDashboard';
 import { AccessibilityUX } from './components/AccessibilityUX';
 import { VisualFormsGallery } from './components/VisualFormsGallery';
 import { AppServerConnection } from './components/AppServerConnection';
+import { DataSchemaTables } from './components/DataSchemaTables';
+import { InteractiveApiPlayground } from './components/InteractiveApiPlayground';
 import { CTA } from './components/CTA';
 
 export default function App() {
@@ -36,6 +38,8 @@ export default function App() {
       <AccessibilityUX />
       <VisualFormsGallery />
       <AppServerConnection />
+      <DataSchemaTables />
+      <InteractiveApiPlayground />
       <Documentation />
       <TechStack />
       <CTA />

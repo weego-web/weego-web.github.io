@@ -4,7 +4,7 @@ import { GitBranch, Database, ArrowRight, Workflow, Layers } from 'lucide-react'
 
 export const SchemasAndTrees = () => {
   const [lang, setLang] = useState<'uk' | 'en'>('uk');
-  const [activeTab, setActiveTab] = useState<'er' | 'flow' | 'api' | 'tree' | 'layers'>('er');
+  const [activeTab, setActiveTab] = useState<'er' | 'flow' | 'api' | 'tree' | 'layers' | 'tables'>('er');
 
   const t = lang === 'uk' ? {
     badge: '04 // Схеми та дерева',
@@ -13,7 +13,8 @@ export const SchemasAndTrees = () => {
     flow: 'Потік даних',
     api: 'API flow',
     tree: 'Дерево проєкту',
-    layers: 'Шари даних'
+    layers: 'Шари даних',
+    tables: 'Таблиці'
   } : {
     badge: '04 // Schemas & Trees',
     title: 'Data structure, flows, trees.',
@@ -21,8 +22,18 @@ export const SchemasAndTrees = () => {
     flow: 'Data Flow',
     api: 'API Flow',
     tree: 'Project Tree',
-    layers: 'Data Layers'
+    layers: 'Data Layers',
+    tables: 'Tables'
   };
+
+  const TABLE_SCHEMAS = [
+    { name: 'users', cols: ['id SERIAL PK', 'full_name VARCHAR(255)', 'phone VARCHAR(20) UNIQUE', 'email VARCHAR(255)', 'role VARCHAR(50)', 'status VARCHAR(20)', 'created_at TIMESTAMP'] },
+    { name: 'accounts', cols: ['id SERIAL PK', 'user_id INT FK→users', 'account_number VARCHAR(20) UNIQUE', 'balance DECIMAL(15,2)', 'currency VARCHAR(3)', 'created_at TIMESTAMP'] },
+    { name: 'transactions', cols: ['id SERIAL PK', 'type VARCHAR(50)', 'amount DECIMAL(15,2)', 'from_account_id INT FK', 'to_account_id INT FK', 'status VARCHAR(20)', 'created_at TIMESTAMP'] },
+    { name: 'salary_payments', cols: ['id SERIAL PK', 'user_id INT FK→users', 'payment_type VARCHAR(50)', 'amount DECIMAL(15,2)', 'payment_date DATE', 'created_at TIMESTAMP'] },
+    { name: 'donations', cols: ['id SERIAL PK', 'from_account_id INT FK', 'target_type VARCHAR(50)', 'target_id INT', 'amount DECIMAL(15,2)', 'created_at TIMESTAMP'] },
+    { name: 'savings_goals', cols: ['id SERIAL PK', 'user_id INT FK→users', 'name VARCHAR(255)', 'target_amount DECIMAL(15,2)', 'current_amount DECIMAL(15,2)', 'created_at TIMESTAMP'] },
+  ];
 
   return (
     <section className="py-32 relative border-t border-white/10 overflow-hidden">
@@ -40,7 +51,7 @@ export const SchemasAndTrees = () => {
 
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-12">
-          {(['er', 'flow', 'api', 'tree', 'layers'] as const).map((tab) => (
+          {(['er', 'flow', 'api', 'tree', 'layers', 'tables'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -53,6 +64,7 @@ export const SchemasAndTrees = () => {
               {tab === 'api' && <ArrowRight className="w-3.5 h-3.5" />}
               {tab === 'tree' && <GitBranch className="w-3.5 h-3.5" />}
               {tab === 'layers' && <Layers className="w-3.5 h-3.5" />}
+              {tab === 'tables' && <Database className="w-3.5 h-3.5" />}
               {t[tab]}
             </button>
           ))}
@@ -255,6 +267,38 @@ export const SchemasAndTrees = () => {
 │
 ├── database_setup.py       # create_tables(), indexes
 └── main.py                 # entry point, uvicorn`}</pre>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Tables schema overview */}
+        {activeTab === 'tables' && (
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+            <div className="overflow-x-auto rounded-xl border border-beige-500/15 overflow-hidden">
+              <table className="w-full font-mono text-xs">
+                <thead>
+                  <tr className="bg-beige-500/10 border-b border-beige-500/20">
+                    <th className="text-left p-4 text-beige-500 font-medium">Таблиця</th>
+                    <th className="text-left p-4 text-beige-500 font-medium">Колонки (типи)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {TABLE_SCHEMAS.map((tbl, i) => (
+                    <tr key={tbl.name} className="border-b border-beige-500/10 hover:bg-beige-500/5 transition-colors">
+                      <td className="p-4 text-beige-400 font-medium">{tbl.name}</td>
+                      <td className="p-4 text-beige-300/80">
+                        <div className="flex flex-wrap gap-2">
+                          {tbl.cols.map((c) => (
+                            <span key={c} className="px-2 py-1 rounded bg-white/5 border border-beige-500/10 text-[11px]">
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </motion.div>
         )}
