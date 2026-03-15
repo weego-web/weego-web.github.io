@@ -6,8 +6,16 @@
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-graphite: #050505;
-  --color-graphite-light: #080808;
+  --color-graphite: #0a0908;
+  --color-graphite-light: #12100e;
+  --color-beige-50: #faf8f5;
+  --color-beige-100: #f5f0e8;
+  --color-beige-200: #e8e0d4;
+  --color-beige-300: #d4c4b0;
+  --color-beige-400: #c4a882;
+  --color-beige-500: #a88b5c;
+  --color-sand: #c9a962;
+  --color-warm: #d4a574;
 }
 
 body {
@@ -20,14 +28,49 @@ body {
 .bg-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(212, 196, 176, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 196, 176, 0.06) 1px, transparent 1px);
+}
+
+.bg-grid-warm {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(135deg, rgba(201, 169, 98, 0.04) 1px, transparent 1px),
+    linear-gradient(-135deg, rgba(201, 169, 98, 0.04) 1px, transparent 1px);
 }
 
 .glow-amber {
   box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
 }
 
+.glow-beige {
+  box-shadow: 0 0 50px rgba(201, 169, 98, 0.12);
+}
+
 .text-glow {
   text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.text-glow-beige {
+  text-shadow: 0 0 24px rgba(201, 169, 98, 0.35);
+}
+
+/* Phone frame notch */
+.phone-notch {
+  width: 100px;
+  height: 24px;
+  background: #0a0908;
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto;
+}
+
+/* Card hover lift */
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(168, 139, 92, 0.12);
+}
+
+/* Subtle gradient overlay */
+.gradient-radial-beige {
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(168, 139, 92, 0.08), transparent 70%);
 }

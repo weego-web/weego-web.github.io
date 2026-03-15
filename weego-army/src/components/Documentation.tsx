@@ -793,11 +793,11 @@ function DocBlock({ section, isOpen, onToggle }: { section: typeof DOC_SECTIONS[
         onClick={onToggle}
         className="w-full flex items-center gap-3 p-4 text-left hover:bg-white/[0.02] transition-colors"
       >
-        {isOpen ? <ChevronDown className="w-4 h-4 text-amber-500 shrink-0" /> : <ChevronRight className="w-4 h-4 text-amber-500 shrink-0" />}
+        {isOpen ? <ChevronDown className="w-4 h-4 text-beige-500 shrink-0" /> : <ChevronRight className="w-4 h-4 text-beige-500 shrink-0" />}
         {section.id === 'arch' || section.id === 'structure' ? (
-          <Folder className="w-4 h-4 text-amber-500/70 shrink-0" />
+          <Folder className="w-4 h-4 text-beige-500/70 shrink-0" />
         ) : (
-          <FileCode className="w-4 h-4 text-amber-500/70 shrink-0" />
+          <FileCode className="w-4 h-4 text-beige-500/70 shrink-0" />
         )}
         <span className="font-mono font-medium text-white">{section.title}</span>
       </button>
@@ -829,11 +829,11 @@ export const Documentation = () => {
   const [openId, setOpenId] = useState<string | null>('arch');
 
   const t = lang === 'uk' ? {
-    badge: '04 // Документація',
+    badge: '08 // Документація',
     title: 'Детальна технічна документація',
     subtitle: 'Архітектура, схема БД, повний код — як у довіднику.'
   } : {
-    badge: '04 // Documentation',
+    badge: '08 // Documentation',
     title: 'Detailed technical documentation',
     subtitle: 'Architecture, DB schema, full code — reference style.'
   };
@@ -842,13 +842,13 @@ export const Documentation = () => {
     <section className="py-32 relative border-t border-white/10 overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none opacity-30" />
       <div className="absolute top-6 right-6 z-50 flex gap-2 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
-        <button onClick={() => setLang('uk')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'uk' ? 'bg-amber-500 text-graphite' : 'text-white/50 hover:text-white'}`}>UK</button>
-        <button onClick={() => setLang('en')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'en' ? 'bg-amber-500 text-graphite' : 'text-white/50 hover:text-white'}`}>EN</button>
+        <button onClick={() => setLang('uk')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'uk' ? 'bg-beige-500 text-graphite' : 'text-white/50 hover:text-white'}`}>UK</button>
+        <button onClick={() => setLang('en')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'en' ? 'bg-beige-500 text-graphite' : 'text-white/50 hover:text-white'}`}>EN</button>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mb-12">
-          <div className="font-mono text-[10px] text-amber-500 uppercase tracking-widest mb-4">{t.badge}</div>
+          <div className="font-mono text-[10px] text-beige-500 uppercase tracking-widest mb-4">{t.badge}</div>
           <h2 className="text-4xl md:text-5xl font-serif mb-6">{t.title}</h2>
           <p className="text-lg text-white/60">{t.subtitle}</p>
         </div>

@@ -77,13 +77,13 @@ export const Essence = () => {
   return (
     <section id="features" className="py-32 relative border-t border-white/10 bg-graphite-light/50">
       <div className="absolute top-6 right-6 z-50 flex gap-2 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
-        <button onClick={() => setLang('uk')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'uk' ? 'bg-amber-500 text-graphite' : 'text-white/50 hover:text-white'}`}>UK</button>
-        <button onClick={() => setLang('en')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'en' ? 'bg-amber-500 text-graphite' : 'text-white/50 hover:text-white'}`}>EN</button>
+        <button onClick={() => setLang('uk')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'uk' ? 'bg-beige-500 text-graphite' : 'text-white/50 hover:text-white'}`}>UK</button>
+        <button onClick={() => setLang('en')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'en' ? 'bg-beige-500 text-graphite' : 'text-white/50 hover:text-white'}`}>EN</button>
       </div>
 
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-20">
-          <div className="font-mono text-[10px] text-amber-500 uppercase tracking-widest mb-4">{t.badge}</div>
+          <div className="font-mono text-[10px] text-beige-500 uppercase tracking-widest mb-4">{t.badge}</div>
           <h2 className="text-4xl md:text-5xl font-serif mb-6">
             {t.title} <span className="italic text-white/50">{t.subtitle}</span>
           </h2>
@@ -101,9 +101,9 @@ export const Essence = () => {
               className="p-8 border border-white/10 bg-graphite hover:bg-white/[0.02] transition-colors group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <pillar.icon className="w-24 h-24 text-amber-500" />
+                <pillar.icon className="w-24 h-24 text-beige-500" />
               </div>
-              <div className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center mb-6 bg-white/5 text-amber-500 relative z-10">
+              <div className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center mb-6 bg-white/5 text-beige-500 relative z-10">
                 <pillar.icon className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-medium mb-4 relative z-10">{pillar.title}</h3>
