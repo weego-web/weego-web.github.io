@@ -75,8 +75,10 @@ export const Essence = () => {
   const t = content[lang];
 
   return (
-    <section id="features" className="py-32 relative border-t border-white/10 bg-graphite-light/50">
-      <div className="absolute top-6 right-6 z-50 flex gap-2 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
+    <section id="features" className="py-32 relative border-t border-beige-500/10 overflow-hidden">
+      <div className="absolute inset-0 bg-grid pointer-events-none opacity-20" />
+      <div className="absolute top-1/2 right-0 w-80 h-80 bg-beige-500/5 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-6 right-6 z-50 flex gap-2 bg-white/5 p-1 rounded-full border border-beige-500/10 backdrop-blur-md">
         <button onClick={() => setLang('uk')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'uk' ? 'bg-beige-500 text-graphite' : 'text-white/50 hover:text-white'}`}>UK</button>
         <button onClick={() => setLang('en')} className={`px-3 py-1 text-xs font-mono rounded-full transition-colors ${lang === 'en' ? 'bg-beige-500 text-graphite' : 'text-white/50 hover:text-white'}`}>EN</button>
       </div>
@@ -98,19 +100,20 @@ export const Essence = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 border border-white/10 bg-graphite hover:bg-white/[0.02] transition-colors group relative overflow-hidden"
+              className="p-8 border border-beige-500/15 bg-graphite hover:border-beige-500/25 hover:shadow-[0_0_30px_rgba(168,139,92,0.08)] transition-all duration-300 group relative overflow-hidden card-inner-glow"
             >
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-beige-500/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-beige-500/10 transition-colors" />
+              <div className="absolute top-0 right-0 p-4 opacity-15 group-hover:opacity-25 transition-opacity">
                 <pillar.icon className="w-24 h-24 text-beige-500" />
               </div>
-              <div className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center mb-6 bg-white/5 text-beige-500 relative z-10">
+              <div className="w-12 h-12 border border-beige-500/20 rounded-xl flex items-center justify-center mb-6 bg-beige-500/10 text-beige-500 relative z-10 shadow-[0_4px_12px_rgba(168,139,92,0.1)]">
                 <pillar.icon className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-medium mb-4 relative z-10">{pillar.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-8 relative z-10">{pillar.desc}</p>
+              <h3 className="text-xl font-medium mb-4 relative z-10 text-beige-100">{pillar.title}</h3>
+              <p className="text-beige-400/70 text-sm leading-relaxed mb-8 relative z-10">{pillar.desc}</p>
               <div className="flex flex-wrap gap-2 relative z-10">
                 {pillar.tags.map(tag => (
-                  <span key={tag} className="px-2 py-1 border border-white/10 bg-white/5 text-[10px] font-mono uppercase tracking-wider text-white/70">{tag}</span>
+                  <span key={tag} className="px-2.5 py-1 rounded-lg border border-beige-500/15 bg-beige-500/5 text-[10px] font-mono uppercase tracking-wider text-beige-400/90">{tag}</span>
                 ))}
               </div>
             </motion.div>

@@ -46,16 +46,18 @@ export const UserJourney = () => {
                 onMouseLeave={() => setHoverStep(null)}
                 className="relative group"
               >
-                <div className={`p-6 rounded-2xl border transition-all duration-300 ${
+                <div className={`p-6 rounded-2xl border transition-all duration-300 card-inner-glow ${
                   hoverStep === step.id
-                    ? 'border-beige-500/40 bg-beige-500/10 shadow-[0_0_40px_rgba(168,139,92,0.15)]'
+                    ? 'border-beige-500/40 bg-beige-500/10 shadow-[0_0_40px_rgba(168,139,92,0.15)] soft-glow'
                     : 'border-beige-500/15 bg-graphite-light/80 hover:border-beige-500/25'
                 }`}>
                   <div className="flex flex-col items-center text-center">
                     <motion.div
                       animate={{ scale: hoverStep === step.id ? 1.05 : 1 }}
                       className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${
-                        hoverStep === step.id ? 'bg-beige-500/25 text-beige-400' : 'bg-beige-500/10 text-beige-500/80'
+                        hoverStep === step.id 
+                          ? 'bg-beige-500/25 text-beige-400 shadow-[0_4px_16px_rgba(168,139,92,0.2)]' 
+                          : 'bg-beige-500/10 text-beige-500/80'
                       }`}
                     >
                       <step.icon className="w-6 h-6" />
@@ -82,7 +84,7 @@ export const UserJourney = () => {
           </div>
         </div>
 
-        <div className="mt-12 p-6 rounded-2xl border border-beige-500/15 bg-graphite-light/50">
+        <div className="mt-12 p-6 rounded-2xl border border-beige-500/15 bg-graphite-light/50 card-inner-glow">
           <div className="font-mono text-[10px] text-beige-500/70 uppercase mb-3">UX-принципи</div>
           <div className="flex flex-wrap gap-4 text-sm text-beige-300/80">
             <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-beige-500/50" /> Progressive disclosure</span>

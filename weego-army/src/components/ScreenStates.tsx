@@ -77,7 +77,7 @@ export const ScreenStates = () => {
             layout
             className="relative w-[280px] sm:w-[300px] shrink-0"
           >
-            <div className="relative aspect-[9/19] bg-[#0d0c0a] border-[3px] border-beige-500/30 rounded-[2.5rem] shadow-2xl overflow-hidden glow-beige">
+            <div className="relative aspect-[9/19] bg-[#0d0c0a] border-[3px] border-beige-500/30 rounded-[2.5rem] shadow-2xl overflow-hidden glow-beige soft-glow">
               <div className="absolute inset-[3px] rounded-[2.25rem] overflow-hidden bg-graphite-light">
                 <div className="absolute top-0 inset-x-0 h-10 bg-[#0a0908] flex justify-center items-end pb-2 z-20">
                   <div className="phone-notch" />
@@ -108,8 +108,8 @@ export const ScreenStates = () => {
                           <div className="text-beige-500/50 text-[9px] mt-1">Безпечний вхід</div>
                         </div>
                         <div className="space-y-3">
-                          <div className="h-11 rounded-xl bg-white/5 border border-beige-500/20 px-4 flex items-center text-beige-200/80 text-sm">+380 XX XXX XX XX</div>
-                          <div className="h-11 rounded-xl bg-white/5 border border-beige-500/20 px-4 flex items-center text-beige-200/80 text-sm">••••••••</div>
+                          <div className="h-11 rounded-xl bg-white/5 border border-beige-500/20 px-4 flex items-center text-beige-200/80 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">+380 XX XXX XX XX</div>
+                          <div className="h-11 rounded-xl bg-white/5 border border-beige-500/20 px-4 flex items-center text-beige-200/80 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">••••••••</div>
                         </div>
                         <button className="w-full h-12 rounded-xl bg-beige-500/30 border border-beige-500/40 text-beige-300 font-medium text-sm">
                           Увійти
@@ -135,8 +135,8 @@ export const ScreenStates = () => {
                         </div>
                         <div className="grid grid-cols-3 gap-2">
                           {['Родині', 'Донат', 'Накоп'].map((l, i) => (
-                            <div key={i} className="h-14 rounded-xl bg-white/5 border border-beige-500/15 flex flex-col items-center justify-center gap-0.5">
-                              <div className="w-5 h-5 rounded-full bg-beige-500/20" />
+                            <div key={i} className="h-14 rounded-xl bg-white/5 border border-beige-500/15 flex flex-col items-center justify-center gap-0.5 hover:bg-beige-500/5 transition-colors">
+                              <div className="w-5 h-5 rounded-full bg-beige-500/20 shadow-[0_0_8px_rgba(168,139,92,0.15)]" />
                               <span className="text-[10px] text-beige-300/70">{l}</span>
                             </div>
                           ))}
@@ -345,7 +345,7 @@ export const ScreenStates = () => {
             layout
             className="w-full max-w-xl"
           >
-            <div className="aspect-[16/10] bg-graphite-light border border-beige-500/20 rounded-xl overflow-hidden glow-beige">
+            <div className="aspect-[16/10] bg-graphite-light border border-beige-500/20 rounded-xl overflow-hidden glow-beige soft-glow card-inner-glow">
               <div className="h-10 border-b border-beige-500/10 bg-[#0a0908] flex items-center px-4 gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-beige-500/40" />
                 <div className="w-2.5 h-2.5 rounded-full bg-beige-500/20" />

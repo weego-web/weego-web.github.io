@@ -38,14 +38,14 @@ export const MetricsDashboard = () => {
               transition={{ delay: i * 0.08 }}
               onMouseEnter={() => setHoverId(m.id)}
               onMouseLeave={() => setHoverId(null)}
-              className={`p-6 rounded-2xl border transition-all duration-300 ${
+              className={`p-6 rounded-2xl border transition-all duration-300 card-inner-glow ${
                 hoverId === m.id
-                  ? 'border-beige-500/40 bg-beige-500/10 shadow-[0_0_30px_rgba(168,139,92,0.12)]'
+                  ? 'border-beige-500/40 bg-beige-500/10 shadow-[0_0_30px_rgba(168,139,92,0.12)] soft-glow'
                   : 'border-beige-500/15 bg-graphite-light hover:border-beige-500/25'
               }`}
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-xl bg-beige-500/15 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-beige-500/15 flex items-center justify-center shadow-[0_4px_12px_rgba(168,139,92,0.1)]">
                   <m.icon className="w-5 h-5 text-beige-500" />
                 </div>
                 {m.change !== '—' && (
@@ -66,7 +66,7 @@ export const MetricsDashboard = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 p-6 rounded-2xl border border-beige-500/15 bg-graphite-light"
+          className="mt-8 p-6 rounded-2xl border border-beige-500/15 bg-graphite-light card-inner-glow"
         >
           <div className="flex items-center justify-between mb-6">
             <div className="font-mono text-[10px] text-beige-500/70 uppercase">Операції за тиждень</div>
@@ -83,7 +83,7 @@ export const MetricsDashboard = () => {
                 whileInView={{ height: `${h}%` }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + i * 0.05, duration: 0.5 }}
-                className="flex-1 rounded-t bg-beige-500/25 border border-beige-500/20 min-w-[20px] hover:bg-beige-500/35 transition-colors"
+                className="flex-1 rounded-t bg-beige-500/25 border border-beige-500/20 min-w-[20px] hover:bg-beige-500/35 transition-colors shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
               />
             ))}
           </div>

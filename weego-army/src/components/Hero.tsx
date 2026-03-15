@@ -45,9 +45,12 @@ export const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-beige-500/30 bg-beige-500/10 text-beige-400 font-mono text-[10px] uppercase tracking-widest mb-6 sm:mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-beige-500/30 bg-beige-500/10 text-beige-400 font-mono text-[10px] uppercase tracking-widest mb-6 sm:mb-8 shadow-[0_0_20px_rgba(168,139,92,0.1)]"
           >
-            <span className="w-2 h-2 rounded-full bg-beige-500 animate-pulse" />
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-beige-500 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-beige-500" />
+            </span>
             MVP для військовослужбовців
           </motion.div>
           
@@ -87,7 +90,7 @@ export const Hero = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
-            <a href="#features" className="px-6 sm:px-8 py-3.5 sm:py-4 bg-beige-500 text-graphite font-medium rounded-none hover:bg-beige-400 transition-all flex items-center gap-2 w-full sm:w-auto justify-center group hover:scale-[1.02] active:scale-[0.98]">
+            <a href="#features" className="px-6 sm:px-8 py-3.5 sm:py-4 bg-beige-500 text-graphite font-medium rounded-lg hover:bg-beige-400 transition-all flex items-center gap-2 w-full sm:w-auto justify-center group hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(168,139,92,0.25)] hover:shadow-[0_6px_30px_rgba(168,139,92,0.35)]">
               Детальніше
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>

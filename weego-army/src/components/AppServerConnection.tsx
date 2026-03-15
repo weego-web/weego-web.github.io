@@ -60,10 +60,10 @@ export const AppServerConnection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           <motion.div
             animate={{ opacity: connectionState === 'offline' ? 0.4 : 1 }}
-            className="p-6 rounded-2xl border border-beige-500/20 bg-graphite"
+            className="p-6 rounded-2xl border border-beige-500/20 bg-graphite card-inner-glow hover:border-beige-500/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-beige-500/15 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-beige-500/15 flex items-center justify-center shadow-[0_4px_12px_rgba(168,139,92,0.1)]">
                 <Smartphone className="w-6 h-6 text-beige-500" />
               </div>
               <div>
@@ -80,7 +80,7 @@ export const AppServerConnection = () => {
 
           <motion.div
             animate={{ opacity: connectionState === 'offline' ? 0.4 : 1 }}
-            className="p-6 rounded-2xl border border-beige-500/30 bg-beige-500/5"
+            className="p-6 rounded-2xl border border-beige-500/30 bg-beige-500/5 card-inner-glow soft-glow"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-xl bg-beige-500/20 flex items-center justify-center">
@@ -100,10 +100,10 @@ export const AppServerConnection = () => {
 
           <motion.div
             animate={{ opacity: connectionState === 'offline' ? 0.4 : 1 }}
-            className="p-6 rounded-2xl border border-beige-500/20 bg-graphite"
+            className="p-6 rounded-2xl border border-beige-500/20 bg-graphite card-inner-glow hover:border-beige-500/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-beige-500/15 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-beige-500/15 flex items-center justify-center shadow-[0_4px_12px_rgba(168,139,92,0.1)]">
                 <Database className="w-6 h-6 text-beige-500" />
               </div>
               <div>

@@ -20,7 +20,7 @@ import { CTA } from './components/CTA';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-graphite text-white selection:bg-beige-500/30">
+    <div className="min-h-screen bg-graphite text-white selection:bg-beige-500/30 bg-noise">
       <Hero />
       <Essence />
       <FeatureBlocks />
